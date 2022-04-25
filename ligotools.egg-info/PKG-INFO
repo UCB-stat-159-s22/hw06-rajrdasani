@@ -1,0 +1,16 @@
+Metadata-Version: 2.1
+Name: ligotools
+Version: 0.0.1
+Summary: Python library to read LIGO data
+Home-page: UNKNOWN
+Author: Ligo Scientific Collaboration (LSC) and Raj Dasani
+Author-email: rajdasani@berkeley.edu
+License: UNKNOWN
+Keywords: tools,ligo
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 2.7
+Classifier: Operating System :: OS Independent
+Requires-Python: >=2.7
+
+UNKNOWN
+
