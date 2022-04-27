@@ -1,5 +1,7 @@
+
+import ligotools
+
 import matplotlib
-matplotlib.use('AGG')
 ## Test utils methods 
 import ligotools
 import numpy as np
@@ -14,7 +16,7 @@ from scipy.interpolate import interp1d
 
 from ligotools import *
 
-def test_whiten():
+def whiten_test():
 	fn_H1 = "data/H-H1_LOSC_4_V2-1126259446-32.hdf5"
 	fs = 4096
 	NFFT = 4*fs
@@ -26,7 +28,7 @@ def test_whiten():
 	assert strain_H1_whiten.shape == strain_H1.shape
 
 
-def test_write_wavfile():
+def write_wavfile_test():
 	data = np.linspace(0,10,100)
 	fs = 1 
 	write_wavfile("audio/temp.wav", fs, data)
@@ -35,7 +37,7 @@ def test_write_wavfile():
 
 from scipy.signal import butter, filtfilt
 
-def test_reqshift():
+def reqshift_test():
 	fn_H1 = "data/H-H1_LOSC_4_V2-1126259446-32.hdf5"
 	fs = 4096
 	NFFT = 4*fs
@@ -56,7 +58,7 @@ def test_reqshift():
 	fss = int(float(fs)*float(speedup))
 	strain_H1_shifted = reqshift(strain_H1_whitenbp,fshift=fshift,sample_rate=fs)
 
-def test_plot_SNR_around_event():
+def plot_SNR_around_event_test():
 	# time, timemax, SNR, pcolor, det, eventname, plottype
 	time = np.linspace(2,10,100)
 	timemax = 2
