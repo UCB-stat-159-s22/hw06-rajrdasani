@@ -1,0 +1,489 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Homework No 6 - From Notebooks to Research Packages, Part II &#8212; Stat 159 HW6 Book</title>
+    
+  <link href="_static/css/theme.css" rel="stylesheet">
+  <link href="_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="_static/js/index.be7d3bbb2ef33a8344ce.js">
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/togglebutton.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script>
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <link rel="canonical" href="/user/rajdasani//proxy/absolute/8000/hw06-description.html" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="_static/logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Stat 159 HW6 Book</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="README.html">
+   Fine-tuning reproduciblity of LIGO Black Hole signal tutorial, Part II
+  </a>
+ </li>
+</ul>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="index.html">
+   BINARY BLACK HOLE SIGNALS IN LIGO OPEN DATA
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="_sources/hw06-description.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.md</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://ucb-stat-159-s22.github.io/hw06-rajrdasani/"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://ucb-stat-159-s22.github.io/hw06-rajrdasani//issues/new?title=Issue%20on%20page%20%2Fhw06-description.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#deliverables">
+   Deliverables
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#points-repository-structure">
+     [5 points] Repository structure
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#points-installable-package">
+     [ 5 points] Installable package
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#points-add-tests-to-readligo-py">
+     [ 5 points ] Add tests to
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       readligo.py
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#points-create-utils-py">
+     [ 5 points ] Create
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       utils.py
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#points-make-new-plotting-utility-in-utils-py">
+     [ 5 points ] Make new plotting utility in
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       utils.py
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#points-add-tests-to-utils-py">
+     [ 5 points ] Add tests to
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       utils.py
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#points-jupyterbook">
+     [ 5 points ] JupyterBook
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#points-github-pages-and-actions">
+     [ 5 points ] GitHub Pages and Actions
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#points-makefile">
+     [ 5 points ] Makefile
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Homework No 6 - From Notebooks to Research Packages, Part II</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#deliverables">
+   Deliverables
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#points-repository-structure">
+     [5 points] Repository structure
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#points-installable-package">
+     [ 5 points] Installable package
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#points-add-tests-to-readligo-py">
+     [ 5 points ] Add tests to
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       readligo.py
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#points-create-utils-py">
+     [ 5 points ] Create
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       utils.py
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#points-make-new-plotting-utility-in-utils-py">
+     [ 5 points ] Make new plotting utility in
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       utils.py
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#points-add-tests-to-utils-py">
+     [ 5 points ] Add tests to
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       utils.py
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#points-jupyterbook">
+     [ 5 points ] JupyterBook
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#points-github-pages-and-actions">
+     [ 5 points ] GitHub Pages and Actions
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#points-makefile">
+     [ 5 points ] Makefile
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            
+              <div>
+                
+  <div class="tex2jax_ignore mathjax_ignore section" id="homework-no-6-from-notebooks-to-research-packages-part-ii">
+<h1>Homework No 6 - <em>From Notebooks to Research Packages, Part II</em><a class="headerlink" href="#homework-no-6-from-notebooks-to-research-packages-part-ii" title="Permalink to this headline">¶</a></h1>
+<ul class="simple">
+<li><p><strong>Statistics 159/259, Spring 2022</strong></p></li>
+<li><p><strong>Due Friday 04/22/2022, 11:59PM PT</strong></p></li>
+<li><p>Prof. F. Pérez and GSI F. Sapienza, Department of Statistics, UC Berkeley.</p></li>
+<li><p>This assignment is worth a maximum of <strong>45 points</strong>.</p></li>
+<li><p>Assignment type: <strong>individual</strong>.</p></li>
+</ul>
+<p>For this assignment, we will start from the conclusion of HW05 and continue improving the structure of your repository as a Reproducible Research Package, using again the code from the <a class="reference external" href="https://github.com/losc-tutorial/LOSC_Event_tutorial">LIGO Gravitational Wave Detection Tutorial</a>.</p>
+<p>In this assignment we are giving you as a starting point effectively the solution to HW05, and you will now add a bit more structure, tests, documentation, etc, to complete the picture.</p>
+<div class="section" id="deliverables">
+<h2>Deliverables<a class="headerlink" href="#deliverables" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="points-repository-structure">
+<h3>[5 points] Repository structure<a class="headerlink" href="#points-repository-structure" title="Permalink to this headline">¶</a></h3>
+<p>The repository starts with all the code and data with the same layout as LIGO created it. You will reorganize it, while checking that the code still runs, so that all data files live in a <code class="docutils literal notranslate"><span class="pre">data</span></code> directory, generated figures get saved to <code class="docutils literal notranslate"><span class="pre">figurs</span></code>, and generated audio goes into <code class="docutils literal notranslate"><span class="pre">audio</span></code>.</p>
+<p>These directories should be present in the repo even before you run any code. Since Git will not let you add an empty dir to a repo, you will need to use a little hack by putting an empty <code class="docutils literal notranslate"><span class="pre">.gitkeep</span></code> file in those directories (as explained <a class="reference external" href="https://www.theserverside.com/blog/Coffee-Talk-Java-News-Stories-and-Opinions/gitkeep-push-empty-folders-git-commit">here</a>).</p>
+</div>
+<div class="section" id="points-installable-package">
+<h3>[ 5 points] Installable package<a class="headerlink" href="#points-installable-package" title="Permalink to this headline">¶</a></h3>
+<p>In HW05 you made <code class="docutils literal notranslate"><span class="pre">ligotools</span></code> usable as a local package that could be imported from the current directory. Now you will make it an actually installable package as discussed in class, with the appropriate <code class="docutils literal notranslate"><span class="pre">pyproj.toml</span></code>, <code class="docutils literal notranslate"><span class="pre">setup.py</span></code> and <code class="docutils literal notranslate"><span class="pre">setup.cfg</span></code> files.</p>
+<p>Note: for the authorship, you should list as authors “Ligo Scientific Collaboration (LSC) and <code class="docutils literal notranslate"><span class="pre">&lt;your</span> <span class="pre">name&gt;</span></code>”.</p>
+</div>
+<div class="section" id="points-add-tests-to-readligo-py">
+<h3>[ 5 points ] Add tests to <code class="docutils literal notranslate"><span class="pre">readligo.py</span></code><a class="headerlink" href="#points-add-tests-to-readligo-py" title="Permalink to this headline">¶</a></h3>
+<p>You should add four separate small tests to the functions in <code class="docutils literal notranslate"><span class="pre">readligo.py</span></code> that are part of the <code class="docutils literal notranslate"><span class="pre">ligotools</span></code> package.  Make a subfolder called <code class="docutils literal notranslate"><span class="pre">tests</span></code> and put in there <code class="docutils literal notranslate"><span class="pre">tests_readligo.py</span></code> with your tests.</p>
+<p>The command <code class="docutils literal notranslate"><span class="pre">pytest</span> <span class="pre">ligotools</span></code> should run all those tests.</p>
+</div>
+<div class="section" id="points-create-utils-py">
+<h3>[ 5 points ] Create <code class="docutils literal notranslate"><span class="pre">utils.py</span></code><a class="headerlink" href="#points-create-utils-py" title="Permalink to this headline">¶</a></h3>
+<p>In the <code class="docutils literal notranslate"><span class="pre">ligotools</span></code> package, make a new module called <code class="docutils literal notranslate"><span class="pre">utils.py</span></code> and move the following functions from the notebook into <code class="docutils literal notranslate"><span class="pre">utils</span></code>: <code class="docutils literal notranslate"><span class="pre">whiten</span></code>, <code class="docutils literal notranslate"><span class="pre">write_wavfile</span></code>, <code class="docutils literal notranslate"><span class="pre">reqshift</span></code>. You will then need to update the notebook to use these functions imported from <code class="docutils literal notranslate"><span class="pre">ligotools.utils</span></code> instead.</p>
+</div>
+<div class="section" id="points-make-new-plotting-utility-in-utils-py">
+<h3>[ 5 points ] Make new plotting utility in <code class="docutils literal notranslate"><span class="pre">utils.py</span></code><a class="headerlink" href="#points-make-new-plotting-utility-in-utils-py" title="Permalink to this headline">¶</a></h3>
+<p>Find the notebook cell that begins with</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># -- To calculate the PSD of the data, choose an overlap and a window (common to all detectors)</span>
+<span class="c1">#   that minimizes &quot;spectral leakage&quot; https://en.wikipedia.org/wiki/Spectral_leakage</span>
+</pre></div>
+</div>
+<p>and move its plotting code into a separate utility function, then call that from the notebook.</p>
+</div>
+<div class="section" id="points-add-tests-to-utils-py">
+<h3>[ 5 points ] Add tests to <code class="docutils literal notranslate"><span class="pre">utils.py</span></code><a class="headerlink" href="#points-add-tests-to-utils-py" title="Permalink to this headline">¶</a></h3>
+<p>You should add four separate small tests to the functions in <code class="docutils literal notranslate"><span class="pre">utils.py</span></code>. These should test the three functions you moved from the notebook and the new plotting one you made above.</p>
+<p>The command <code class="docutils literal notranslate"><span class="pre">pytest</span> <span class="pre">ligotools</span></code> should run all those tests.</p>
+</div>
+<div class="section" id="points-jupyterbook">
+<h3>[ 5 points ] JupyterBook<a class="headerlink" href="#points-jupyterbook" title="Permalink to this headline">¶</a></h3>
+<p>Set up the repository to be a proper JupyterBook one that builds a page for the main notebook and includes a visible Binder link in the JupyterBook build.</p>
+<p>Remember that on the hub, in order to be able to view the book build without having to use the VNC desktop, we need to run sphinx manually. These are the key commands for your reference:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>jupyter-book config sphinx .
+sphinx-build  . _build/html -D <span class="nv">html_baseurl</span><span class="o">=</span><span class="si">${</span><span class="nv">JUPYTERHUB_SERVICE_PREFIX</span><span class="si">}</span>/proxy/absolute/8000
+</pre></div>
+</div>
+<p>Then we can view the code with (in another terminal), going to the <code class="docutils literal notranslate"><span class="pre">_build/html</span></code> folder and running:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python -m http.server
+</pre></div>
+</div>
+<p>and then heading to this URL:</p>
+<p><a class="reference external" href="https://stat159.datahub.berkeley.edu/user-redirect/proxy/8000/index.html">https://stat159.datahub.berkeley.edu/user-redirect/proxy/8000/index.html</a></p>
+</div>
+<div class="section" id="points-github-pages-and-actions">
+<h3>[ 5 points ] GitHub Pages and Actions<a class="headerlink" href="#points-github-pages-and-actions" title="Permalink to this headline">¶</a></h3>
+<p>Configure your repo to have a public GitHub Pages URL and set up a GitHub Action that builds the JupyterBook build of the repo on all pushes to the main branch (like the class repo works).</p>
+<p>Note that the code to execute the notebooks is based on Python 2.7 while the JupyterBook build tools are based on Python 3. You’ll need to treat the build and science code separately.</p>
+</div>
+<div class="section" id="points-makefile">
+<h3>[ 5 points ] Makefile<a class="headerlink" href="#points-makefile" title="Permalink to this headline">¶</a></h3>
+<p>There should be a Makefile with the following targets</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">env</span></code>: creates and configures the environment.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">html</span></code>: build the JupyterBook normally (calling <code class="docutils literal notranslate"><span class="pre">jupyterbook</span> <span class="pre">build</span> <span class="pre">.</span></code>). Note this build can only be viewed if the repo is cloned locally, or with the VNC desktop on the hub.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">html-hub</span></code>: build the JupyterBook so that you can view it on the hub with the URL proxy trick as indicated above.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">clean</span></code>: clean up the <code class="docutils literal notranslate"><span class="pre">figures</span></code>, <code class="docutils literal notranslate"><span class="pre">audio</span></code>  and <code class="docutils literal notranslate"><span class="pre">_build</span></code> folders.</p></li>
+</ul>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            
+                <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+</div>
+            
+        </div>
+    </div>
+    <footer class="footer">
+  <p>
+    
+      By Raj Dasani<br/>
+    
+        &copy; Copyright 2021.<br/>
+  </p>
+</footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+
+  </body>
+</html>
